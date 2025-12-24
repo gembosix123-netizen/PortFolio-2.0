@@ -1,0 +1,21 @@
+/* Efek Background Mahal */
+body {
+  background: #020617;
+  overflow-x: hidden;
+}
+
+.glow-bg {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  animation: float 20s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translate(-10%, -10%); }
+  to { transform: translate(20%, 20%); }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Mohammad Allan</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin:0; padding:0; font-family:'Montserrat', sans-serif; background:#1f1f1f; color:#e0e0e0; }
+a { color:#3eb489; text-decoration:none; transition:0.3s; }
+a:hover { color:#76d6b8; }
+header { height:100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('profile-bg.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+header h1 { font-family:'Lora', serif; font-size:3rem; margin:0; }
+header p { font-size:1.3rem; margin:10px 0 20px; color:#b0f0d6; }
+img.profile { width:160px; height:160px; border-radius:50%; object-fit:cover; border:4px solid #3eb489; transition: transform 0.3s, box-shadow 0.3s; }
+img.profile:hover { transform: scale(1.1); box-shadow:0 0 20px #3eb489; }
+nav { text-align:center; margin:25px 0; }
+nav a { margin:0 15px; font-weight:600; font-size:1rem; }
+section { padding:60px 20px; max-width:1000px; margin:20px auto; background:#2b2b2b; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.5); }
+h2 { color:#3eb489; font-size:2rem; margin-bottom:30px; font-family:'Lora', serif; }
+p { line-height:1.8; color:#cfcfcf; font-size:1rem; }
+ul { padding:0; display:flex; flex-wrap:wrap; justify-content:center; }
+li { list-style:none; margin:10px; padding:10px 20px; background:#3eb489; border-radius:25px; font-weight:600; color:#1f1f1f; transition:0.3s; }
+li:hover { background:#76d6b8; }
+.portfolio-item { margin-bottom:50px; }
+.portfolio-item h3 { margin-bottom:15px; }
+.carousel { position:relative; max-width:450px; margin:0 auto; }
+.slides img { display:none; width:100%; border-radius:10px; transition:0.3s; }
+.prev, .next { position:absolute; top:50%; transform:translateY(-50%); background-color: rgba(0,0,0,0.6); color:white; padding:10px; cursor:pointer; border-radius:50%; font-size:1.5rem; }
+.prev { left:-20px; }
+.next { right:-20px; }
+video.project { width:100%; border-radius:10px; margin-top:10px; }
+#contact p { margin:10px 0; font-size:1.1rem; }
+#contact a { color:#3eb489; font-weight:600; }
+#contact a:hover { color:#76d6b8; }
+footer { text-align:center; padding:25px; background:#1a1a1a; color:#999; font-size:0.9rem; }
+@media(max-width:768px){ img.profile { width:130px; height:130px; } .carousel { max-width:95%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mohammad Allan bin Andan</h1>
+  <p>Web Developer & Designer | Learning & Growing</p>
+  <img src="profile.jpg" alt="Allan Profile" class="profile" onerror="this.src='placeholder-profile.png'">
+</header>
+
+<nav>
+  <a href="#about">About Me</a>
+  <a href="#skills">Skills</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello, I’m Mohammad Allan. I come from a customer-service background in F&B, but I’m passionate about web development and design. I am actively learning HTML, CSS, JavaScript, and design tools like Photoshop and Illustrator. I’m excited to apply new skills in real projects and eager to grow at programs like Gamuda AI Academy.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills & Tech Stack</h2>
+  <ul>
+    <li>HTML & CSS (Familiar)</li>
+    <li>JavaScript (Beginner)</li>
+    <li>UI/UX Design Basics</li>
+    <li>Graphic Design (Photoshop, Illustrator)</li>
+    <li>Adobe Premiere / Motion Design</li>
+  </ul>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+
+  <!-- Invitation Video -->
+  <div class="portfolio-item">
+    <h3>Invitation Card (Hans & Yati)</h3>
+    <video class="project" controls>
+      <source src="hans_yati_card.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Jersey Designs Slider -->
+  <div class="portfolio-item">
+    <h3>Jersey Designs</h3>
+    <div class="carousel">
+      <span class="prev" onclick="plusSlides(-1,0)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1,0)">&#10095;</span>
+      <div class="slides">
+        <img src="jersey1.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="jersey2.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="jersey3.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="jersey4.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="jersey5.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="jersey6.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo Designs Slider -->
+  <div class="portfolio-item">
+    <h3>Logo Designs</h3>
+    <div class="carousel">
+      <span class="prev" onclick="plusSlides(-1,1)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1,1)">&#10095;</span>
+      <div class="slides">
+        <img src="logo1.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="logo2.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+        <img src="logo3.jpg" class="slide" onerror="this.src='placeholder-image.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <h3>Professional Profile</h3>
+  <p>Dedicated and customer-focused server with 2 years of experience in the F&B industry. Skilled in providing excellent service, time management, and teamwork. Passionate about learning web development and design to grow in tech.</p>
+  <h3>Career Objective</h3>
+  <p>Aiming to expand my skills by joining <strong>Gamuda AI Academy</strong> to learn web development, AI, and design, while leveraging my strong customer service background to contribute effectively in team projects.</p>
+  <h3>Work Experience</h3>
+  <ul>
+    <li><strong>Banquet Assistant – Raia Hotel (Sep 2022 – Dec 2024)</strong><br>Provided polite and efficient service to guests, assisted with event setup, managed orders and payments, and maintained cleanliness following health standards.</li>
+    <li><strong>Shop Assistant – Walk-in & Shop (Feb 2021 – Jul 2022)</strong><br>Delivered friendly customer service, organized store displays, handled sales transactions, and monitored inventory.</li>
+  </ul>
+  <h3>Education</h3>
+  <ul>
+    <li>STPM – Sekolah Menengah Kebangsaan Likas (Sept 2021 – Feb 2023)</li>
+    <li>SPM – Sekolah Menengah Kebangsaan Likas (Jan 2016 – Mar 2021)</li>
+  </ul>
+  <h3>Skills & Interests</h3>
+  <ul>
+    <li>Customer Service & Communication</li>
+    <li>Time Management & Multitasking</li>
+    <li>Familiar with HTML, CSS, JavaScript (beginner)</li>
+    <li>Graphic Design (Photoshop, Illustrator)</li>
+    <li>Passionate about learning web development and AI at Gamuda Academy</li>
+  </ul>
+  <h3>Languages</h3>
+  <ul>
+    <li>Bahasa Melayu – Fluent</li>
+    <li>English – Intermediate</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:allanzyt123@gmail.com">allanzyt123@gmail.com</a></p>
+  <p>Telegram: +60 11-1207-6533</p>
+</section>
+
+<footer>
+  <p>© 2025 Mohammad Allan bin Andan</p>
+</footer>
+
+<script>
+let slideIndexes=[0,0];
+showSlides(0,0);
+showSlides(0,1);
+function plusSlides(n,carousel){
+  showSlides(slideIndexes[carousel]+=n,carousel);
+}
+function showSlides(n,carousel){
+  let carousels=document.getElementsByClassName("carousel");
+  let slides=carousels[carousel].getElementsByClassName("slide");
+  if(n>=slides.length) slideIndexes[carousel]=0;
+  if(n<0) slideIndexes[carousel]=slides.length-1;
+  for(let i=0;i<slides.length;i++) slides[i].style.display="none";
+  slides[slideIndexes[carousel]].style.display="block";
+}
+</script>
+
+</body>
+</html>

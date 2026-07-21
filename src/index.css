@@ -1,8 +1,15 @@
-@import "tailwindcss";
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
 
-/* Kekalkan gaya paksa untuk memastikan latar belakang gelap */
-body {
-  margin: 0;
-  background-color: #020617;
-  color: white;
+::selection {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }

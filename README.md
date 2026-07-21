@@ -1,16 +1,25 @@
-# React + Vite
+# Allan Andan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, minimalist portfolio for Allan Andan, built with React and Vite.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Production build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+The production output is written to `dist/`. Vite uses a relative base path, so the build can be deployed at a domain root or a nested path such as GitHub Pages (`/PortFolio-2.0/`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployment
+
+- **GitHub Pages:** configure a workflow to build with `npm ci && npm run build`, then publish the `dist/` directory.
+- **Vercel / Netlify / Firebase Hosting:** use `npm run build` as the build command and `dist` as the output directory.
+- The site is a single-page portfolio and does not require server-side route rewrites.

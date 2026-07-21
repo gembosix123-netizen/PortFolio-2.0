@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { ease, reveal } from '../lib/motion'
+import MotionChrome from './MotionChrome'
 import SiteHeader from './SiteHeader'
 
 export function Reveal({ children, className = '', delay = 0, amount = 0.2 }) {
@@ -45,16 +46,19 @@ export default function PageFrame({ children }) {
   return (
     <div className="app-shell">
       <a className="skip-link" href="#page-content">Skip to content</a>
+      <MotionChrome />
       <SiteHeader />
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -18 }}
-        transition={{ duration: 0.45, ease }}
-      >
-        {children}
-      </motion.div>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -22 }}
+          transition={{ duration: 0.5, ease }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
       <Footer />
     </div>
   )

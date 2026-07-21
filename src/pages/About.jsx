@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Reveal } from '../components/PageFrame'
@@ -6,6 +8,18 @@ import { toolGroups } from '../data/portfolio'
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 
 export default function About() {
+  const portraitRef = useRef(null)
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll({
+    target: portraitRef,
+    offset: ['start end', 'end start'],
+  })
+  const portraitY = useTransform(scrollYProgress, [0, 1], ['-4%', '4%'])
+  const portraitScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1.04, 1.1])
+  const thinkY = useTransform(scrollYProgress, [0, 1], [-70, 80])
+  const makeY = useTransform(scrollYProgress, [0, 1], [65, -65])
+  const leadY = useTransform(scrollYProgress, [0, 1], [-45, 55])
+
   return (
     <main id="page-content" className="page about-page">
       <section className="about-intro">
@@ -20,9 +34,17 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="about-portrait-section">
-        <img src={asset('allan-editorial.png')} alt="Editorial portrait of Allan Andan" />
-        <div className="about-portrait-words" aria-hidden="true"><span>Think</span><span>Make</span><span>Lead</span></div>
+      <section ref={portraitRef} className="about-portrait-section">
+        <motion.img
+          src={asset('allan-editorial.png')}
+          alt="Editorial portrait of Allan Andan"
+          style={reduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
+        />
+        <div className="about-portrait-words" aria-hidden="true">
+          <motion.span style={reduceMotion ? undefined : { y: thinkY }}>Think</motion.span>
+          <motion.span style={reduceMotion ? undefined : { y: makeY }}>Make</motion.span>
+          <motion.span style={reduceMotion ? undefined : { y: leadY }}>Lead</motion.span>
+        </div>
       </section>
 
       <section className="tools-section">

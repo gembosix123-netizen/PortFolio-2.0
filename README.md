@@ -1,56 +1,59 @@
-# Allan Andan — Portfolio
+# Allan Andan — Multidisciplinary Portfolio
 
-A responsive, motion-led portfolio for Allan Andan, built with React, Vite, and Framer Motion.
+A multipage portfolio for Allan Andan: founder of Netsa Digital Solutions, developer, system builder, and graphic designer based in Kota Kinabalu, Sabah, Malaysia.
 
-## Add another project
+## Pages
 
-Project content is kept separate from the page layout so it can be updated without editing the main React component.
+- `/` — portfolio index
+- `/development` — websites, systems, and AI work
+- `/development/:slug` — individual project case studies
+- `/design` — jersey, identity, and motion design
+- `/company` — Netsa Digital Solutions
+- `/about` — story, toolkit, and experience
+- `/contact` — WhatsApp, email, and GitHub
 
-1. Add the project image or video to `public/`.
+## Add a development project
+
+1. Add its screenshot to `public/projects/`.
 2. Open `src/data/portfolio.js`.
-3. Copy an existing item in the `projects` array and update its text, tags, link, accent colour, and media.
-4. Keep each `id` unique and increase the displayed `number`.
-
-Supported media formats:
+3. Add a new object to `developmentProjects` with a unique `slug`.
+4. The archive and case-study route will be created automatically.
 
 ```js
-// One image
-media: { type: 'image', src: 'project.jpg', alt: 'Project preview' }
-
-// One looping video
-media: { type: 'video', src: 'project.mp4', alt: 'Project preview' }
-
-// A four-image gallery
-media: {
-  type: 'gallery',
-  items: [
-    { src: 'project-1.jpg', alt: 'First project view' },
-    { src: 'project-2.jpg', alt: 'Second project view' },
-  ],
+{
+  slug: 'project-name',
+  number: '05',
+  title: 'Project Name',
+  type: 'Website or system',
+  year: '2026',
+  image: 'projects/project-name.png',
+  href: 'https://project.example.com',
+  color: '#d5f5ff',
+  summary: 'What the project is.',
+  challenge: 'The problem it needed to solve.',
+  response: 'How the project responds to that problem.',
+  highlights: ['Highlight one', 'Highlight two'],
 }
 ```
 
-Frameworks and software shown on the site are managed in the `techStack` array in the same file.
+Graphic-design collections and the toolkit are managed in `designCollections` and `toolGroups` in the same file.
 
-## Local development
+## Development
 
 ```bash
 npm install
 npm run dev
-```
-
-## Production build
-
-```bash
+npm run lint
 npm run build
-npm run preview
 ```
 
-The production output is written to `dist/`. Vite uses a relative base path, so the build can be deployed at a domain root or a nested path such as GitHub Pages (`/PortFolio-2.0/`).
+The project uses React, Vite, React Router, Anime.js, Framer Motion, React Spline, the Spline runtime, and Lucide icons. Anime.js powers the hero typography entrance. The interactive custom 3D artwork is used as a safe fallback until a personal Spline scene is configured.
 
-## Deployment
+## Add a Spline scene
 
-- **GitHub Pages:** configure a workflow to build with `npm ci && npm run build`, then publish the `dist/` directory.
-- **Vercel / Netlify / Firebase Hosting:** use `npm run build` as the build command and `dist` as the output directory.
-- The site is a single-page portfolio and does not require server-side route rewrites.
-- Vercel can deploy automatically whenever the connected `main` branch receives a new commit.
+1. Open the scene in Spline and select **Export → Code → React**.
+2. Copy the exported `scene.splinecode` URL.
+3. Copy `.env.example` to `.env` and set `VITE_SPLINE_SCENE_URL`.
+4. Add the same environment variable in Vercel for production.
+
+Vercel routing is configured in `vercel.json` so every page works when opened directly.

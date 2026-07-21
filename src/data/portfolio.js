@@ -1,96 +1,135 @@
-export const projects = [
+export const disciplines = [
   {
-    id: 'signbridge',
     number: '01',
-    title: 'SignBridge AI',
-    category: 'AI · Web Application',
-    description:
-      'An AI-powered communication bridge created for Deaf and hearing communities, combining accessible interaction with practical technology.',
-    href: 'https://signbridge-app-6f7c4.web.app/',
-    tags: ['React', 'Python', 'FastAPI', 'AI'],
-    accent: '#d8ff3e',
-    media: {
-      type: 'image',
-      src: 'signbridge-hero.jpg.png',
-      alt: 'SignBridge AI website homepage',
-    },
+    title: 'Development',
+    subtitle: 'Websites, systems & AI products',
+    href: '/development',
+    color: '#2146ff',
   },
   {
-    id: 'hans-yati',
     number: '02',
-    title: 'Hans & Yati',
-    category: 'Motion · Digital Invitation',
-    description:
-      'An animated digital invitation designed to turn a personal announcement into a polished, memorable visual experience.',
-    tags: ['Motion', 'Layout', 'Digital Media'],
-    accent: '#ff6b4a',
-    media: {
-      type: 'video',
-      src: 'hans_yati_card.mp4',
-      alt: 'Animated Hans and Yati digital invitation',
-    },
+    title: 'Graphic Design',
+    subtitle: 'Identity, apparel & visual stories',
+    href: '/design',
+    color: '#ff5a1f',
   },
   {
-    id: 'identity-apparel',
     number: '03',
-    title: 'Identity & Apparel',
-    category: 'Branding · Sports Design',
-    description:
-      'A collection of sports identities, jersey concepts, and graphic systems built to give teams a distinct visual character.',
-    tags: ['Photoshop', 'Illustrator', 'Apparel'],
-    accent: '#82a7ff',
-    media: {
-      type: 'gallery',
-      items: [
-        { src: 'jersey2.jpg', alt: 'White and red custom football jersey' },
-        { src: 'jersey3.jpg', alt: 'Turquoise patterned custom jersey' },
-        { src: 'logo1.jpg', alt: 'Raja football club panther identity' },
-        { src: 'logo2.jpg', alt: 'Predator football club identity' },
-      ],
-    },
+    title: 'Netsa Digital',
+    subtitle: 'Company, thinking & solutions',
+    href: '/company',
+    color: '#c8ff3d',
   },
 ]
 
-export const techStack = [
-  { name: 'React', category: 'Frontend Framework', code: 'RE' },
-  { name: 'Vite', category: 'Build Tool', code: 'VI' },
-  { name: 'JavaScript', category: 'Language', code: 'JS' },
-  { name: 'Python', category: 'Language', code: 'PY' },
-  { name: 'FastAPI', category: 'Backend Framework', code: 'FA' },
-  { name: 'AI Integration', category: 'Technology', code: 'AI' },
-  { name: 'Photoshop', category: 'Creative Software', code: 'PS' },
-  { name: 'Illustrator', category: 'Creative Software', code: 'IL' },
-  { name: 'GitHub', category: 'Version Control', code: 'GH' },
-  { name: 'Firebase', category: 'Deployment', code: 'FB' },
+export const developmentProjects = [
+  {
+    slug: 'netsa-digital-solutions',
+    number: '01',
+    title: 'Netsa Digital Solutions',
+    type: 'Company platform',
+    year: '2026',
+    image: 'projects/netsa-company.png',
+    href: 'https://netsa-company-profile.vercel.app/',
+    color: '#d5f5ff',
+    summary:
+      'A bilingual company experience that turns Netsa’s listen-first approach into a clear digital journey for startups, SMEs, IKS, and local businesses.',
+    challenge:
+      'Present a wide range of digital services without forcing visitors into confusing packages or technical language.',
+    response:
+      'The experience is organised around discovery: listen, understand, recommend, build, and support. The interface makes consultation feel practical and human.',
+    highlights: ['Bilingual experience', 'Service discovery', 'Consultation-first UX', 'Responsive build'],
+  },
+  {
+    slug: 'push-management-system',
+    number: '02',
+    title: 'PUSH Management System',
+    type: 'Community platform',
+    year: '2026',
+    image: 'projects/push-management.png',
+    href: 'https://push-management-system.vercel.app/',
+    color: '#ffd7df',
+    summary:
+      'A public website and management touchpoint for Persatuan Usahawan Sabah, connecting membership, activities, news, galleries, and enquiries.',
+    challenge:
+      'Bring multiple association needs into one approachable experience for entrepreneurs and administrators.',
+    response:
+      'A modular platform combines public storytelling with membership checks, barcode purchasing, join flows, and admin access.',
+    highlights: ['Membership journey', 'Content platform', 'Admin access', 'Sabah business community'],
+  },
+  {
+    slug: 'says-sales-audit',
+    number: '03',
+    title: 'SAYS 2.0',
+    type: 'Business system',
+    year: '2026',
+    image: 'projects/says-system.png',
+    href: 'https://says-netsa.vercel.app/login',
+    color: '#dce5ff',
+    summary:
+      'A focused Sales & Audit Management System designed around secure access and real operational data.',
+    challenge:
+      'Give a business team a dependable entry point into a structured sales and audit workflow.',
+    response:
+      'A calm, high-contrast interface prioritises authentication and connects user access to Supabase records instead of temporary local data.',
+    highlights: ['Supabase authentication', 'Sales workflow', 'Audit management', 'Role-based access'],
+  },
+  {
+    slug: 'signbridge-ai',
+    number: '04',
+    title: 'SignBridge AI',
+    type: 'AI web application',
+    year: '2025',
+    image: 'signbridge-hero.jpg.png',
+    href: 'https://signbridge-app-6f7c4.web.app/',
+    color: '#dfffc0',
+    summary:
+      'An AI-powered communication bridge created for Deaf and hearing communities with accessibility at its core.',
+    challenge:
+      'Reduce communication friction through an interface that feels useful, understandable, and inclusive.',
+    response:
+      'The project combines a React interface with Python, FastAPI, and AI integration in a practical capstone product.',
+    highlights: ['React', 'Python & FastAPI', 'AI integration', 'Accessibility focus'],
+  },
 ]
 
-export const experience = [
+export const designCollections = [
   {
-    period: '2025 — NOW',
-    role: 'Aspiring Developer',
-    company: 'Gamuda AI Academy',
-    description:
-      'An intensive technology pathway focused on modern web development and practical AI integration, including the SignBridge capstone project.',
+    slug: 'apparel',
+    title: 'Apparel / Jersey',
+    description: 'Custom sportswear concepts built around team personality, movement, and strong visual rhythm.',
+    images: ['jersey1.jpg', 'jersey2.jpg', 'jersey3.jpg', 'jersey4.jpg', 'jersey5.jpg', 'jersey6.jpg'],
+    color: '#ff5a1f',
   },
   {
-    period: '2022 — 2024',
-    role: 'Banquet Assistant',
-    company: 'Raia Hotel',
-    description:
-      'Delivered reliable guest service and worked closely with a fast-moving team during professional events and functions.',
-  },
-  {
-    period: '2021 — 2022',
-    role: 'Shop Assistant',
-    company: 'Walk-in & Shop',
-    description:
-      'Supported daily retail operations, sales, customer service, and inventory management.',
+    slug: 'identity',
+    title: 'Logo / Identity',
+    description: 'Bold marks and sports identities designed to remain recognisable on screen, print, and apparel.',
+    images: ['logo1.jpg', 'logo2.jpg', 'logo3.jpg'],
+    color: '#7a43ff',
   },
 ]
 
-export const services = [
-  'Frontend Development',
-  'AI Integration',
-  'Visual Identity',
-  'Apparel Design',
+export const toolGroups = [
+  {
+    title: 'Build',
+    tools: ['React', 'Vite', 'JavaScript', 'Python', 'FastAPI', 'Supabase', 'Firebase', 'GitHub'],
+  },
+  {
+    title: 'Create',
+    tools: ['Photoshop', 'Illustrator', 'Brand Identity', 'Apparel Design', 'Motion', 'Layout'],
+  },
+  {
+    title: 'Lead',
+    tools: ['Product Thinking', 'Business Discovery', 'Client Communication', 'Founder Mindset'],
+  },
+]
+
+export const netsaServices = [
+  'Business websites & company profiles',
+  'Custom system development',
+  'Business planning & documentation',
+  'Creative & branding support',
+  'AI & automation guidance',
+  'Ongoing Netsa care & support',
 ]
